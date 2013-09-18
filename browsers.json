@@ -1,0 +1,590 @@
+[
+   {
+      "os_version":"Lion",
+      "browser":"safari",
+      "browser_version":"5.1",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"safari",
+      "browser_version":"6.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"chrome",
+      "browser_version":"27.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"chrome",
+      "browser_version":"28.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"chrome",
+      "browser_version":"29.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"firefox",
+      "browser_version":"21.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"firefox",
+      "browser_version":"22.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"firefox",
+      "browser_version":"23.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"opera",
+      "browser_version":"12.15",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"opera",
+      "browser_version":"15.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Lion",
+      "browser":"opera",
+      "browser_version":"16.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"safari",
+      "browser_version":"6.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"chrome",
+      "browser_version":"27.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"chrome",
+      "browser_version":"28.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"chrome",
+      "browser_version":"29.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"firefox",
+      "browser_version":"21.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"firefox",
+      "browser_version":"22.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"firefox",
+      "browser_version":"23.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"opera",
+      "browser_version":"12.15",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"opera",
+      "browser_version":"15.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"Mountain Lion",
+      "browser":"opera",
+      "browser_version":"16.0",
+      "os":"OS X",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"safari",
+      "browser_version":"5.1",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"chrome",
+      "browser_version":"27.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"chrome",
+      "browser_version":"28.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"chrome",
+      "browser_version":"29.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"ie",
+      "browser_version":"10.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"ie",
+      "browser_version":"10.0 Desktop",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"firefox",
+      "browser_version":"21.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"firefox",
+      "browser_version":"22.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"firefox",
+      "browser_version":"23.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"opera",
+      "browser_version":"12.16",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"opera",
+      "browser_version":"15.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"8",
+      "browser":"opera",
+      "browser_version":"16.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"safari",
+      "browser_version":"5.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"safari",
+      "browser_version":"5.1",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"ie",
+      "browser_version":"8.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"ie",
+      "browser_version":"9.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"ie",
+      "browser_version":"10.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"ie",
+      "browser_version":"11.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"chrome",
+      "browser_version":"27.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"chrome",
+      "browser_version":"28.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"chrome",
+      "browser_version":"29.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"firefox",
+      "browser_version":"21.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"firefox",
+      "browser_version":"22.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"firefox",
+      "browser_version":"23.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"opera",
+      "browser_version":"12.16",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"opera",
+      "browser_version":"15.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"7",
+      "browser":"opera",
+      "browser_version":"16.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"safari",
+      "browser_version":"5.1",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"ie",
+      "browser_version":"6.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"ie",
+      "browser_version":"8.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"chrome",
+      "browser_version":"26.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"chrome",
+      "browser_version":"27.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"chrome",
+      "browser_version":"28.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"chrome",
+      "browser_version":"29.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"firefox",
+      "browser_version":"21.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"firefox",
+      "browser_version":"22.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"firefox",
+      "browser_version":"23.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"opera",
+      "browser_version":"12.16",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"opera",
+      "browser_version":"15.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"XP",
+      "browser":"opera",
+      "browser_version":"16.0",
+      "os":"Windows",
+      "device":null
+   },
+   {
+      "os_version":"6.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad 3rd (6.0)"
+   },
+   {
+      "os_version":"6.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad Mini"
+   },
+   {
+      "os_version":"6.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPhone 4S (6.0)"
+   },
+   {
+      "os_version":"6.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPhone 5"
+   },
+   {
+      "os_version":"3.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPhone 3GS"
+   },
+   {
+      "os_version":"3.2",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad"
+   },
+   {
+      "os_version":"4.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPhone 4"
+   },
+   {
+      "os_version":"5.1",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad 3rd"
+   },
+   {
+      "os_version":"5.1",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPhone 4S"
+   },
+   {
+      "os_version":"5.0",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad 2 (5.0)"
+   },
+   {
+      "os_version":"4.3.2",
+      "browser":"Mobile Safari",
+      "browser_version":null,
+      "os":"ios",
+      "device":"iPad 2"
+   },
+   {
+      "os_version":"2.3",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Samsung Galaxy S II"
+   },
+   {
+      "os_version":"2.3",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Samsung Galaxy Note"
+   },
+   {
+      "os_version":"2.3",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Motorola Droid Razr"
+   },
+   {
+      "os_version":"2.3",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Motorola Droid 4"
+   },
+   {
+      "os_version":"2.2",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"HTC Wildfire"
+   },
+   {
+      "os_version":"4.2",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"LG Nexus 4"
+   },
+   {
+      "os_version":"4.1",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Google Nexus 7"
+   },
+   {
+      "os_version":"4.1",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Samsung Galaxy S III"
+   },
+   {
+      "os_version":"4.1",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Motorola Razr Maxx HD"
+   },
+   {
+      "os_version":"4.0",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Amazon Kindle Fire 2"
+   },
+   {
+      "os_version":"4.0",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Amazon Kindle Fire HD 8.9"
+   },
+   {
+      "os_version":"4.0",
+      "browser":"Android Browser",
+      "browser_version":null,
+      "os":"android",
+      "device":"Samsung Galaxy Tab 2 10.1"
+   }
+]

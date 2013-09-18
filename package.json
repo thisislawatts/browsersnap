@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "browserstack": "~1.0.0",
+    "sugar": "~1.4.1",
+    "MD5": "~1.1.0"
+  }
+}
