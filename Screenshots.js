@@ -12,7 +12,10 @@ var http = require('http'),
 
 var auth = getAuthDetails();
 
-if (!auth) throw "No Auth details provided";
+if (!auth) {
+	stdout.write('\033[31mNo Auth details provided, check you\'ve got a .browserstack file.\033\[39m\n');
+		process.exit();
+}
 
 var client = BrowserStack.createClient( auth );
 
