@@ -1,7 +1,13 @@
-_Screeshots_
+#Screenshots
 
 __Installation__
 
-*[ ] Iterate over URLS
-*[ ] Build Out URLs
-*[ ] Kill all workers on force quitting the tool
+__Usage__
+
+`node screenshots.js --url=example.com`
+
+__To Do__
+
+* [ ] Iterate over URLS
+* [ ] Build Out URLs
+* [ ] Kill all workers on force quitting the tool
