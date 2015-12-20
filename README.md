@@ -2,6 +2,11 @@
 
 ## Installation
 
+```
+git clone git@github.com:thisislawatts/Screenshots.git
+npm install
+```
+
 ## Usage
 
 ```

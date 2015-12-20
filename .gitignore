@@ -1,2 +1,3 @@
 .browserstack
 screenshots/
+node_modules
