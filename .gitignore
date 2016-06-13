@@ -2,3 +2,5 @@
 screenshots/
 node_modules
 browserstack.json
+# Ignore generated output
+reports/
