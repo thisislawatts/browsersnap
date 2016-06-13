@@ -1,3 +1,4 @@
 .browserstack
 screenshots/
 node_modules
+browserstack.json
