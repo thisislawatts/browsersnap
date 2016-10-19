@@ -39,7 +39,7 @@ This file should be structured as:
 
 ```json
 {
-	urls: []
+	"urls" : []
 }
 ```
 
