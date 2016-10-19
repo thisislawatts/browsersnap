@@ -1,6 +1,8 @@
-#Screenshots
+Browsersnap
+===
 
-## Installation
+Installation
+---
 
 ```
 git clone git@github.com:thisislawatts/Screenshots.git
@@ -17,7 +19,8 @@ You'll then need to create a `browserstack.json` file
 ```
 
 
-## Usage
+Usage
+---
 
 ```
 ./browsersnap.js --version
@@ -25,6 +28,24 @@ You'll then need to create a `browserstack.json` file
 ./browsersnap.js get [url]
 ```
 
-## To Do
+If you want to cycle through a bulk collection of URLs just pass through a .json
+file.
+
+```
+./browsersnap.js get ./path/to.json
+```
+
+This file should be structured as:
+
+```json
+{
+	urls: []
+}
+```
+
+
+
+To Do
+---
 
 * Central queuing system
