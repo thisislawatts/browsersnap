@@ -223,14 +223,16 @@ Browsersnap.prototype.getScreenshotFor = function ( url, browsers ) {
 
 	let _self = this,
 		opts = {
-		url 		: url,
-		browsers	: browsers,
-		wait_time 	: 10
-	};
+                        url 		: url,
+                        win_res		: "1280x1024",
+                        mac_res		: "1280x1024",
+                        browsers	: browsers,
+                        wait_time 	: 10
+                };
 
 	_self.client.generateScreenshots( opts, (err, job) => {
 		if (err) {
-			console.log(chalk.red(err), err);
+                        console.log( chalk.red(err), err);
 			_self.screenshotQueue.push(url);
 
 			_self.log(chalk.yellow( `Moved ${url} back to screenshotQueue` ));
