@@ -24,8 +24,9 @@ program
 	.version(pkg.version);
 
 program
-	.command('browsers [filter]')
-	.description('Fetch available browsers as json')
+	.command('browsers [latest]')
+	.description(`Fetch available browsers as json.
+		Optionally append 'latest' to only get the most recent version.`)
 	.action(function(filter) {
 
 	screenshotClient.getBrowsers(function( error, browsers ) {
@@ -62,20 +63,8 @@ program
 });
 
 program
-	.command('name')
-	.action(function() {
-		var b = require('./b.json');
-
-		var out = b.map(function(browser) {
-			return _.values(browser).join(' ').trim().replace(/\s/g,'-');
-		});
-
-		console.log(out);
-	});
-
-program
-	.command('get <url|path-to-json.url>')
-	.description('screenshot requested url')
+	.command('get <url|comma,seperated,list,of,urls|path-to-json.url>')
+	.description('Screenshot requested url')
 	.action( function( url ) {
 
 		// var urls = _.slice( getUrlsFromString( url ), 0, 2 );
