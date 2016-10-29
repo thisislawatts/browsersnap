@@ -1,13 +1,13 @@
 {
   "name": "browsersnap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Luke Watts <luke@thisis.la>",
   "bin": {
-    "browsersnap" : "./cli.js"
+    "browsersnap": "./cli.js"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/thisislawatts/Screenshots"
+    "url": "https://github.com/thisislawatts/browsersnap",
+    "type": "git"
   },
   "dependencies": {
     "browserstack": "^1.3.1",
@@ -15,8 +15,9 @@
     "commander": "^2.9.0",
     "got": "^5.6.0",
     "lodash": "^3.10.1",
-    "meow": "^3.6.0",
     "sugar": "^1.4.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "Helper for generating screengrabs from Browserstack via a cli",
+  "main": "index.js"
 }
