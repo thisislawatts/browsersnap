@@ -5,22 +5,6 @@ const Browserstack = require('browserstack');
 const _ = require('lodash');
 
 
-function getAuthDetails() {
-	var ret = false;
-
-	if ( fs.existsSync( process.cwd() + '/.browserstack' ) ) {
-		ret = JSON.parse(fs.readFileSync( process.cwd() + '/.browserstack'));
-	} else {
-		console.log(chalk.yellow(
-			`No Browserstack account details provided, either:
-* Check you've got a .browserstack file in current directory
-* Add them to this command with --username|password flags
-		`));
-		process.exit();
-	}
-
-	return ret;
-}
 
 /**
  *
@@ -42,7 +26,10 @@ function parseUrls( url ) {
 
 const Browsersnap = function( username, password, options ) {
 
-	this.auth = false;
+	this.auth = {
+		username : username,
+		password : password
+	};
 
 	this.opts = options;
 	this.screenshotQueue = [];
@@ -55,14 +42,6 @@ const Browsersnap = function( username, password, options ) {
 
 	this.client;
 
-	if ( !username || !password) {
-		this.auth = getAuthDetails();
-	} else {
-		this.auth = {
-			username : username,
-			password : password
-		}
-	}
 
 	if (!this.auth) {
 
