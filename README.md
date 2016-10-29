@@ -5,8 +5,7 @@ Installation
 ---
 
 ```
-git clone git@github.com:thisislawatts/Screenshots.git
-npm install
+npm install browsersnap
 ```
 
 Create a `.browserstack` file containing your account details.
@@ -17,6 +16,7 @@ Create a `.browserstack` file containing your account details.
   "password": "bar"
 }
 ```
+
 
 
 Usage
