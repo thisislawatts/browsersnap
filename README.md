@@ -9,11 +9,11 @@ git clone git@github.com:thisislawatts/Screenshots.git
 npm install
 ```
 
-You'll then need to create a `browserstack.json` file
+Create a `.browserstack` file containing your account details.
 
-```
+```json
 {
-  "username": "foo",
+  "username": "an@example.address",
   "password": "bar"
 }
 ```

@@ -2,6 +2,9 @@
   "name": "browsersnap",
   "version": "0.0.1",
   "author": "Luke Watts <luke@thisis.la>",
+  "bin": {
+    "browsersnap" : "./cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/thisislawatts/Screenshots"

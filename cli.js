@@ -1,19 +1,22 @@
 #!/usr/bin/env node
+
 'use strict';
 
 /**
  * Browsersnap
  *
- * @version 0.0.1
+ * @version 0.0.2
  */
 
-var chalk = require('chalk'),
-	got = require('got'),
-	fs = require('fs'),
-	_ = require('lodash'),
-	BrowserStack = require('browserstack'),
-	stdout = process.stdout;
+const chalk = require('chalk'),
+		got = require('got'),
+		fs = require('fs'),
+		_ = require('lodash'),
+		BrowserStack = require('browserstack'),
+		pkg = require('./package.json'),
+		program = require('commander');
 
+var	stdout = process.stdout;
 var auth = getAuthDetails();
 var screenshotClient = BrowserStack.createScreenshotClient(auth);
 
@@ -22,52 +25,48 @@ var screenshotQueue = [];
 var processingQueue = [];
 var processingController;
 
-var program = require('commander');
 var processedCounter = 0;
 var processTotal = 0;
 
-var BROWSER_PATH = './browsers/';
+program
+	.version(pkg.version);
 
 program
-  .version('0.0.1');
+	.command('browsers [filter]')
+	.description('Fetch available browsers as json')
+	.action(function(filter) {
 
-program
-  .command('browsers [filter]')
-  .description('Fetch available browsers as json')
-  .action(function(filter) {
+	screenshotClient.getBrowsers(function( error, browsers ) {
 
-  	screenshotClient.getBrowsers(function( error, browsers ) {
+		if (filter === 'latest') {
+			var nested = [];
+			var tmpB = '', tmpBv = 0;
 
-	    if (filter === 'latest') {
-	    	var nested = [];
-	    	var tmpB = '', tmpBv = 0;
+			_.map(browsers.reverse(), function(browser) {
+				var os = keyify(browser.os);
+				var osVersion = keyify(browser.os_version);
+				var browserName = keyify(browser.browser);
+				var browserVersion = keyify(browser.browser_version);
 
-	    	_.map(browsers.reverse(), function(browser) {
-	    		var os = keyify(browser.os);
-	    		var osVersion = keyify(browser.os_version);
-	    		var browserName = keyify(browser.browser);
-	    		var browserVersion = keyify(browser.browser_version);
-				var path = _.compact([os,'v' + osVersion,browserName,browserVersion]).join('.');
+				if ( isDepreciatedOS(os, osVersion) || (tmpB === browserName && tmpBv > browserVersion) ) {
+					return;
+				}
 
-	    		if ( isDepreciatedOS(os, osVersion) || (tmpB === browserName && tmpBv > browserVersion) ) {
-	    			return;
-		    	}
+				tmpB = browserName;
+				tmpBv = browserVersion;
 
-	    		tmpB = browserName;
-	    		tmpBv = browserVersion;
+				if (nested.length < 25 )
+					nested.push(browser);
+			});
 
-	    		if (nested.length < 25 )
-	    			nested.push(browser);
-	    	});
-
-	    	console.log( JSON.stringify(nested));
+			console.log( JSON.stringify(nested));
 
 
-	    } else {
-		    console.log( JSON.stringify(browsers) );
-	    }
+		} else {
+			console.log( JSON.stringify(browsers) );
+		}
 	});
-  });
+});
 
 program
 	.command('name')
@@ -82,30 +81,29 @@ program
 	});
 
 program
-  .command('get <url|path-to-json.url>')
-  .description('screenshot requested url')
-  .action( function( url ) {
+	.command('get <url|path-to-json.url>')
+	.description('screenshot requested url')
+	.action( function( url ) {
 
+		// return;
 
-  	// return;
+		// var urls = _.slice( getUrlsFromString( url ), 0, 2 );
+		var urls = getUrlsFromString( url );
 
-  	// var urls = _.slice( getUrlsFromString( url ), 0, 2 );
-  	var urls = getUrlsFromString( url );
+		console.log( chalk.cyan('Fetching ' + (urls.length > 1 ? urls.length + ' screenshots.' : url) ) );
 
-  	console.log( chalk.cyan('Fetching ' + (urls.length > 1 ? urls.length + ' screenshots.' : url) ) );
+		urls.map(function(uri) {
 
-	urls.map(function(uri) {
+			screenshotQueue.push(uri);
+			// getScreenshotFor(uri, getLatestBrowsers( 2 ) );
 
-		screenshotQueue.push(uri);
-		// getScreenshotFor(uri, getLatestBrowsers( 2 ) );
+		});
+
+		processingController = setInterval( checkingProcessingJobs, 1500 );
+
+		processTotal = urls.length;
 
 	});
-
-	processingController = setInterval( checkingProcessingJobs, 1500 );
-
-	processTotal = urls.length;
-
-  });
 
 program.parse(process.argv);
 
@@ -128,23 +126,8 @@ function getLatestBrowsers( numberOfBrowsers ) {
 
 	return [{"device":null,"browser":"firefox","os_version":"El Capitan","browser_version":"45.0","os":"OS X"}];
 
-	return _.slice( _.shuffle( require( BROWSER_PATH + 'latest.json')), 0, numberOfBrowsers );
+//	return _.slice( _.shuffle( require( BROWSER_PATH + 'latest.json')), 0, numberOfBrowsers );
 }
-
-function setToValue(obj, value, path) {
-    path = path.split('.');
-
-    for (var i = 0; i < path.length - 1; i++) {
-    	if (obj[path])
-    		obj = obj[path[i]];
-    }
-
-    if (!obj[path[i]])
-      obj[path[i]] = [];
-
-    obj[path[i]].push(value);
-}
-
 
 function isDepreciatedOS( os, osVersion ) {
 	var unsupported_os_versions = ['xp','snowleopard','mountainlion','lion'];
@@ -174,7 +157,7 @@ function keyify( str ) {
 }
 
 function getScreenshotFor( url, browsers ) {
-  	var opts = {
+	var opts = {
 		url 		: url,
 		browsers	: browsers,
 		wait_time 	: 10
@@ -187,7 +170,7 @@ function getScreenshotFor( url, browsers ) {
 			console.log( chalk.yellow( `Moved ${url} back to screenshotQueue` ) );
 
 			return false;
-		};
+		}
 
 		// TODO: What is this all doing?
 		//
@@ -207,8 +190,8 @@ function getScreenshotFor( url, browsers ) {
 function getAuthDetails() {
 	var ret = false;
 
-	if ( fs.existsSync('browserstack.json') ) {
-		ret = require('./browserstack.json');
+	if ( fs.existsSync('.browserstack') ) {
+		ret = JSON.parse(fs.readFileSync('.browserstack'));
 	} else {
 		stdout.write('No Auth details provided, check you\'ve got a .browserstack file.\n');
 		process.exit();
