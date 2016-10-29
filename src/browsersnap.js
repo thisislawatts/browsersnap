@@ -12,15 +12,15 @@ const _ = require('lodash');
  */
 function parseUrls( urls ) {
 
-        if (Array.isArray(urls)) {
-                return urls;
+	if (Array.isArray(urls)) {
+		return urls;
 	}
 
 	if (url.match(',')) {
-                return urls.split(',');
+		return urls.split(',');
 	}
 
-        return [urls];
+	return [urls];
 }
 
 const Browsersnap = function( username, password, options ) {
@@ -142,8 +142,8 @@ Browsersnap.prototype.checkingProcessingJobs = function() {
 	}
 
 	console.log( chalk.green(
-		`All processing jobs complete 👌
-Images saved in ${_self.imagesOutputTo}/*.jpg` ) );
+		`👌 All processing jobs complete
+Images saved in ${_self.imagesOutputTo}*.jpg` ) );
 	clearInterval( _self.processingController );
 }
 
@@ -181,7 +181,13 @@ Browsersnap.prototype.getJobStatus = function(job_id) {
 
 Browsersnap.prototype.getLatestBrowsers = function( numberOfBrowsers ) {
 
-	return [{"device":null,"browser":"firefox","os_version":"El Capitan","browser_version":"45.0","os":"OS X"}];
+	let _self = this;
+
+	if (!_self.opts.browsers) {
+		return [{"device":null,"browser":"firefox","os_version":"El Capitan","browser_version":"45.0","os":"OS X"}];
+	}
+
+	return _self.opts.browsers;
 
 	return _.slice( _.shuffle( require( BROWSER_PATH + 'latest.json')), 0, numberOfBrowsers );
 }
@@ -223,16 +229,16 @@ Browsersnap.prototype.getScreenshotFor = function ( url, browsers ) {
 
 	let _self = this,
 		opts = {
-                        url 		: url,
-                        win_res		: "1280x1024",
-                        mac_res		: "1280x1024",
-                        browsers	: browsers,
-                        wait_time 	: 10
-                };
+			url 		: url,
+			win_res		: "1280x1024",
+			mac_res		: "1280x1024",
+			browsers	: browsers,
+			wait_time 	: 10
+		};
 
 	_self.client.generateScreenshots( opts, (err, job) => {
 		if (err) {
-                        console.log( chalk.red(err), err);
+			console.log( chalk.red(err), err);
 			_self.screenshotQueue.push(url);
 
 			_self.log(chalk.yellow( `Moved ${url} back to screenshotQueue` ));

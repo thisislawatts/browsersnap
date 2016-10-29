@@ -2,14 +2,11 @@
 
 const Browsersnap = require('./src/Browsersnap.js');
 
-const chalk = require('chalk'),
-		fs = require('fs'),
-		_ = require('lodash'),
-		BrowserStack = require('browserstack'),
-		pkg = require('./package.json'),
-		program = require('commander');
-
-
+const chalk = require('chalk');
+const fs = require('fs');
+const _ = require('lodash');
+const pkg = require('./package.json');
+const program = require('commander');
 
 function getAuthDetails(username, password) {
 	var ret = false;
@@ -36,6 +33,7 @@ function getAuthDetails(username, password) {
 	}
 }
 
+const browsersnapConfig = JSON.parse( fs.readFileSync( process.cwd() + '/.browsersnap' ) );
 
 program
 	.version(pkg.version)
@@ -58,11 +56,20 @@ program
 	});
 
 program
-	.command('get <url|comma,seperated,list,of,urls|path-to-json.url>')
+	.command('get [url|comma,seperated,list,of,urls|path-to-json.url]')
 	.description('Screenshot requested url')
 	.action( function( urls ) {
 
-		let bs = new Browsersnap(program.username, program.password, {
+		let auth = getAuthDetails(program.username, program.password);
+
+		if (!urls) {
+			urls = browsersnapConfig.urls;
+
+			console.log('Setting Urls as:', urls );
+		}
+
+		let bs = new Browsersnap(auth.username, auth.password, {
+			browsers    : browsersnapConfig.browsers,
 			verboseMode : program.verbose
 		});
 

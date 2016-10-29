@@ -17,6 +17,7 @@ Create a `.browserstack` file containing your account details.
 }
 ```
 
+Run `browsersnap browsers` to get a list of all the browsers available.
 
 
 Usage
@@ -25,27 +26,28 @@ Usage
 ```
 browsersnap --version
 browsersnap browsers
-browsersnap get [url]
+browsersnap get [url|comma,seperated,list,of,urls]
 ```
 
-If you want to cycle through a bulk collection of URLs just pass through a .json
-file.
-
-```
-./browsersnap.js get ./path/to.json
-```
-
-This file should be structured as:
+A `.browsersnap` file can be added to act as config file that can be stored in version control and shared to ensure consist tests.
 
 ```json
 {
-	"urls" : []
+	"urls" : [
+		"http://example.com",
+		"http://browserstack.com"
+	],
+	"browsers": [
+		{
+			"os": "Windows",
+			"os_version": "10",
+			"browser": "edge",
+			"device": null,
+			"browser_version": "13.0"
+		}
+	]
 }
 ```
 
+After adding a `.browsersnap` file you can run `browsersnap get` in the same directory as that file.
 
-
-To Do
----
-
-* Central queuing system
