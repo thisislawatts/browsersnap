@@ -1,5 +1,6 @@
 Browsersnap
 ===
+[![npm version](https://badge.fury.io/js/browsersnap.svg)](https://badge.fury.io/js/browsersnap)
 
 Installation
 ---
@@ -49,5 +50,5 @@ A `.browsersnap` file can be added to act as config file that can be stored in v
 }
 ```
 
-After adding a `.browsersnap` file you can run `browsersnap get` in the same directory as that file.
+After adding a `.browsersnap` file you can run `browsersnap get` in the same directory to use those settings.
 
