@@ -10,18 +10,17 @@ const _ = require('lodash');
  *
  * @return array - Array of URLs
  */
-function parseUrls( url ) {
+function parseUrls( urls ) {
 
-	if ( url.match(/json/) ) {
-
-		return require( url ).urls;
+        if (Array.isArray(urls)) {
+                return urls;
 	}
 
 	if (url.match(',')) {
-		return url.split(',');
+                return urls.split(',');
 	}
 
-	return [url];
+        return [urls];
 }
 
 const Browsersnap = function( username, password, options ) {
