@@ -1,13 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
-
-/**
- * Browsersnap
- *
- * @version 0.0.2
- */
-
 const chalk = require('chalk'),
 		got = require('got'),
 		fs = require('fs'),
@@ -55,8 +47,9 @@ program
 				tmpB = browserName;
 				tmpBv = browserVersion;
 
-				if (nested.length < 25 )
+				if (nested.length < 25 ) {
 					nested.push(browser);
+				}
 			});
 
 			console.log( JSON.stringify(nested));
@@ -85,8 +78,6 @@ program
 	.description('screenshot requested url')
 	.action( function( url ) {
 
-		// return;
-
 		// var urls = _.slice( getUrlsFromString( url ), 0, 2 );
 		var urls = getUrlsFromString( url );
 
@@ -95,8 +86,6 @@ program
 		urls.map(function(uri) {
 
 			screenshotQueue.push(uri);
-			// getScreenshotFor(uri, getLatestBrowsers( 2 ) );
-
 		});
 
 		processingController = setInterval( checkingProcessingJobs, 1500 );
