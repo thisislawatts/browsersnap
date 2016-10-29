@@ -23,9 +23,9 @@ Usage
 ---
 
 ```
-./browsersnap.js --version
-./browsersnap.js browsers
-./browsersnap.js get [url]
+browsersnap --version
+browsersnap browsers
+browsersnap get [url]
 ```
 
 If you want to cycle through a bulk collection of URLs just pass through a .json
