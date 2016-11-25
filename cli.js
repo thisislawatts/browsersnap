@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Browsersnap = require('./src/Browsersnap.js');
+const BrowserSnap = require('./src/Browsersnap.js');
 
 const chalk = require('chalk');
 const fs = require('fs');
@@ -48,7 +48,7 @@ program
 
 		let auth = getAuthDetails(program.username, program.password);
 
-		let bs = new Browsersnap( auth.username, auth.password, {
+		let bs = new BrowserSnap( auth.username, auth.password, {
 			verboseMode : program.verbose
 		});
 
@@ -64,16 +64,14 @@ program
 
 		if (!urls) {
 			urls = browsersnapConfig.urls;
-
-			console.log('Setting Urls as:', urls );
 		}
 
-		let bs = new Browsersnap(auth.username, auth.password, {
+		let bs = new BrowserSnap(auth.username, auth.password, {
 			browsers    : browsersnapConfig.browsers,
 			verboseMode : program.verbose
 		});
 
-                bs.get(urls.reverse());
+		bs.get(urls.reverse());
 
 	});
 
