@@ -73,7 +73,7 @@ program
 			verboseMode : program.verbose
 		});
 
-		bs.get(urls);
+                bs.get(urls.reverse());
 
 	});
 
