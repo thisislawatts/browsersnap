@@ -1,0 +1,36 @@
+{
+	"urls" : [
+		"http://example.com",
+		"http://www.browserstack.com"
+	],
+	"browsers": [
+		{
+			"os": "Windows",
+			"os_version": "10",
+			"browser": "edge",
+			"device": null,
+			"browser_version": "13.0"
+		},
+		{
+			"os": "Windows",
+			"os_version": "10",
+			"browser": "firefox",
+			"device": null,
+			"browser_version": "45.0"
+		},
+		{
+			"os": "OS X",
+			"os_version": "El Capitan",
+			"browser": "safari",
+			"device": null,
+			"browser_version": "9.1"
+		},
+		{
+			"os": "OS X",
+			"os_version": "El Capitan",
+			"browser": "firefox",
+			"device": null,
+			"browser_version": "45.0"
+		}
+	]
+}
